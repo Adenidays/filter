@@ -1,0 +1,42 @@
+{% extends "Shop/base.html" %}
+
+{% block title %} Detail {% endblock %}
+
+{% block content %}
+<style>
+  .container {
+    margin-top: 50px;
+  }
+
+  .card {
+    background-color: #343a40; /* Dark background color for the card */
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .card-title {
+    color: #fff; /* Text color for the product name */
+  }
+
+  .card-subtitle {
+    color: #adb5bd; /* Subtitle color */
+  }
+
+  .card-text {
+    color: #fff; /* Text color for other product details */
+  }
+</style>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <h6 class="card-subtitle mb-2">Price - {{ product.price }}</h6>
+            <p class="card-text">Vendor - {{ product.vendor.title }}</p>
+            <p class="card-text">Count - {{ product.count }}</p>
+            <p class="card-text">Category - {{ product.category.title }}</p>
+            <p class="card-text">Average rating - {{ product.average_rating }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
